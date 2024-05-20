@@ -296,7 +296,12 @@ case "wie ben je?":
         if (event.key === "Enter") {
             sendMessage();
         }
-    });
+   // Simuleer een vertraging voordat de chatbot antwoordt (voor realistischer effect)
+   setTimeout(function() {
+                      var botResponse = chatbotResponse(userMessage);
+                      addMessage("Turte", botResponse);
+                  }, 275);
+              });
 </script>
 <body>
     <p>
