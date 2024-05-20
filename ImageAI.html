@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image AI</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #cfe8d5; /* Light green background */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #008080; /* Teal */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        nav {
+            background-color: #5f9ea0; /* Cadet blue */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #7fffd4; /* Aquamarine */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2e8b57; /* Sea green */
+        }
+
+        p {
+            color: #483d8b; /* Dark slate blue */
+        }
+
+        #chatMessages {
+            background-color: #ffffff; /* White */
+            border: 2px solid #008080; /* Teal */
+            padding: 10px;
+            height: 400px;
+            width: 880px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f0f0f0; /* Crèmekleurig */
+
+        }
+
+        #userInput {
+            width: calc(64.5% - 22px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 2px solid #008080; /* Teal */
+        }
+
+        #button {
+            background-color: #008080; /* Teal */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #button:hover {
+            background-color: #7fffd4; /* Aquamarine */
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .user {
+            color: #483d8b; /* Dark slate blue */
+        }
+
+        .ai {
+            color: #2e8b57; /* Sea green */
+        }
+
+        .ai img {
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    Image AI
+</header>
+<nav>
+    <a href="Home.html">Home</a>
+    <a href="Schildpadden.html">Schildpadden</a>
+    <a href="Eenden.html">Eenden</a>
+    <a href="Tools.html">Tools</a>
+    <a href="TurtleDuckAI.html">Turtle & Duck AI</a>
+    <a href="Contact.html">Contact</a>
+    <a href="ImageAI.html">Image AI</a>
+</nav>
+<main>
+    <h1>Welkom bij Image AI</h1>
+    <p>
+        Met onze AI-assistent Image AI kun je informatie krijgen over schildpadden, eenden en nog veel meer!
+    </p>
+    <p>
+        Pas Op! Als er een spatie, punt of andere interpunctie achter uw prompt staat begrijpt Image AI uw niet!
+    </p>
+    <h2>Chat met Image AI</h2>
+    <div id="chatMessages"></div>
+    <input type="text" id="userInput" placeholder="Typ hier je bericht">
+    <button id="button" onclick="sendMessage()">Verstuur</button>
+</main>
+
+<script>
+    function sendMessage() {
+        var userInput = document.getElementById("userInput").value;
+        var chatMessages = document.getElementById("chatMessages");
+        document.getElementById("userInput").value = "";
+
+        var userMessage = document.createElement("div");
+        userMessage.className = "message user";
+        userMessage.textContent = "Jij: " + userInput;
+        chatMessages.appendChild(userMessage);
+
+        var aiResponseImage;
+        var aiResponseText;
+
+        if (userInput.toLowerCase() === "een ridder met een zwaard") {
+            aiResponseImage = "https://pe-images.s3.amazonaws.com/basics/cc/image-size-resolution/resize-pixel-art/pixel-art-hero.png";
+        } else if (userInput.toLowerCase() === "een schildpad") {
+            aiResponseImage = "https://cms.dierenbescherming.nl/assets/common/schildpad03.jpg";
+        } else if (userInput.toLowerCase() === "nog een ding") {
+            aiResponseImage = "https://via.placeholder.com/400x300.png?text=Nog+Een+Ding";
+        } else {
+            aiResponseText = "Ik ben ImageAI, helaas begrijp ik u niet, uw prompt is mogelijk nog niet in mijn codering verwerkt, er wordt aan gewerkt!";
+        }
+
+        var aiMessage = document.createElement("div");
+        aiMessage.className = "message ai";
+
+        if (aiResponseImage) {
+            aiMessage.innerHTML = "Image AI:<br><img src='" + aiResponseImage + "' alt='AI Response Image'>";
+        } else {
+            aiMessage.textContent = "Image AI: " + aiResponseText;
+        }
+
+        chatMessages.appendChild(aiMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Event listener for Enter key press
+    document.getElementById("userInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+</script>
+
+</body>
+</html>

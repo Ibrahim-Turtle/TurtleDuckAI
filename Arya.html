@@ -1,0 +1,280 @@
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: lightblue;
+    }
+  
+    #button{
+    background-color: rgb(29, 155, 240);
+    color: white;
+    height: 50px;
+    width: 100px;
+    border-color: orange;
+    border-radius: 50px;
+    border-style: solid;
+    cursor: pointer;
+    border-width: 1.50px;
+    margin-left: 2px;
+    font-weight: bold;
+    font-size: 12.5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: top;
+  }
+  #nav{
+    padding: 0.25%;
+    background-color: rgb(239, 157, 16);
+    height:max-content;
+    width:max-content;
+    margin-left: 310px;
+    border-radius: 50px
+  }
+  #button-navbar{
+    background-color: rgb(29, 155, 240);
+    color: white;
+    height: 50px;
+    width: 100px;
+    border-color: orange;
+    border-radius: 50px;
+    border-style: solid;
+    cursor: pointer;
+    border-width: 1.50px;
+    margin-left: 2px;
+    font-weight: bold;
+    font-size: 12.5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    vertical-align: top;
+  }
+  
+      #text-lm {
+          color: orangered;
+          font-weight: bold;
+          font-size: 16.50px;
+          margin-left: 0.25%;
+  
+      }
+      #chatContainer {
+            max-width: 95%;
+            height: 75%;
+            margin-top: 0.75px;
+            margin-left: 0.75;
+            margin: auto;
+            border: 3px solid #1185f2;
+            padding: 0px;
+            border-radius: 10px;
+        }
+  
+        #chatMessages {
+            height: 92.75%;
+            padding-left: 1%;
+            padding-right: 0.75%;
+            padding-top: 0.75%;
+            margin-bottom: 0.55%;
+            background-image: url(AryaBackground3.png);
+            border-radius: 7.50px;
+            opacity: 0.95;
+            background-size: cover;
+            overflow-y: scroll;
+            background-image: url('https://as2.ftcdn.net/v2/jpg/01/75/99/61/1000_F_175996134_3XOGmKu5aus61jlGw7tX3CWX5CHIUsfO.jpg');  
+            background-repeat: no-repeat; /* Hiermee wordt voorkomen dat de afbeelding wordt herhaald als deze niet groot genoeg is */
+        }
+  
+        #userInput {
+            width: 100%;
+            padding: 0.75%;
+            box-sizing: border-box;
+            border-radius: 35px;
+            border-style: solid;
+            border-color: rgb(18, 221, 239); 
+            opacity: 1;
+        }
+        #tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #question-mark {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    background-color: #f0b30a; /* kleur van de cirkel */
+  }
+  
+  #tooltip-text {
+    visibility: hidden;
+    width: 350px;
+    height: 225px;
+    background-color: #595858;
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  #tooltip:hover #tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  </style>
+  <div id="nav">
+  <button id="button-navbar" onclick="window.location.href = 'TurtleDuckAI.html';">Terug naar TurtleDuckAI</button>
+  </div>
+  <br>
+  <title>Arya</title>
+  <h1>Arya</h1>
+  <link rel="icon" href="AryaLogo.png" type="image/png">
+  <br>
+  <p>Welkom bij onze gloednieuwe chatbot: Arya! Met Arya kan jij eenvoudige vragen stellen, informatie krijgen over deze site of over verschillende schoolonderwerpen! Wij hebben Arya ontworpen met een taalmodel dat schoolonderwerpen en andere infromatie precies snapt! Momenteel zal Arya niet perfect werken en niet alles snappen, maar in de komende tijd zal dit snel veranderen!</p>
+  <hr noshade width="98%" size="5%" color="darkgrey">
+  <br>
+  <br>
+  <p>Veel plezier met Arya en houd er rekening mee dat Arya niet optimaal zal werken, dingen niet kan bergijpen en fouten kan maken!</p>
+  <br>
+  <br>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta autor="Ryan van der Haak and Ibrahim Yahya Eweida">
+  </head>
+  <body>
+    <div id="chatContainer">
+        <div id="chatMessages"></div>
+        <input type="text" id="userInput" placeholder="Typ hier je bericht">
+  
+  
+  <!--Dit is de verwijzing naar het script van Arya. Hierdoor kan je chatten en komen er antwoorden. Hier staat tevens de data in!-->
+  <div><div><script src="AryaScript.js"></script></div></div>
+  </body>
+  <br>
+  <div><span>Huidig taalmodel:</span><span id="text-lm"> AryaLM2</span><div id="tooltip">
+    <span id="question-mark">?</span>
+    <span id="tooltip-text">Het taalmodel dat momenteel in gebruik is. LM staat voor <i>Language Model</i>, oftewel de versie van het taalmodel. Zodra er een groot aantal aan nieuwe data toe is gevoegd, zal er een nieuw versienummer verschijnen. Als er een kleine update is doorgevoerd, zoals een paar kleine verbeteringen, dan zal er een mini-versienummer verschijnen, zoals AryaLM1.1 of AryaLM1.2.
+    <br>
+    <br>
+  Taalmodel-versie AryaLM2 is mede mogelijk gemaakt door Ragheb en Ibrahim.</span>
+  </div></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1>Contact</h1>
+  <br>
+  <p>Als Arya iets niet heeft begrepen, laat dit dan alsjeblieft weten via het onderstaande formulier. Geef de exacte prompt die je Arya hebt gegeven en wij zullen dit z.s.m. toevoegen aan onze code!</p>
+  <br>
+  <p>Als je het formulier helemaal hebt ingevuld en op 'Verstuur' hebt geklikt, wordt je automatisch naar jouw email-app gestuurd en hier zullen jouw gegevens instaan. <strong>Verander niks aan deze tekst die in de e-mail staat!</strong></p>
+  <br>
+  <br>
+  <html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .container-form {
+        max-width: 400px;
+        margin: 12.5px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .input-form[type="text"]{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        box-sizing: border-box;
+      }
+      .input-form[type="submit"], .input-form[type="reset"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .input-form[type="submit"]:hover, .input-form[type="reset"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+  
+  <div class="container-form">
+    <form id="contactForm" onsubmit="sendEmail(); return false;">
+      <label for="naam">Vul je naam in:</label>
+      <input id="naam" type="text" required>
+      <br>
+      <br>
+      <label for="email">Vul je e-mailadres in:</label>
+      <input id="email" type="email" required>
+      <br>
+      <br>
+      <label for="bericht">Je bericht:</label>
+      <textarea id="bericht" rows="5" required></textarea>
+      <br>
+      <br>
+      <input class="input-form" type="submit" value="Verstuur">
+      <br>
+      <br>
+      <input class="input-form" type="reset" value="Wissen">
+    </form>
+  </div>
+  
+  <script>
+    function sendEmail() {
+      // Verkrijg de ingevoerde gegevens
+      var naam = document.getElementById("naam").value;
+      var email = document.getElementById("email").value;
+      var bericht = document.getElementById("bericht").value;
+  
+      // Controleer of alle velden zijn ingevuld
+      if (naam.trim() === "" || email.trim() === "" || bericht.trim() === "") {
+        alert("Vul alle velden in voordat je een e-mail verstuurt!.");
+        return;
+      }
+  
+      // Opstelling van het e-mailbericht
+      var subject = "Bericht van " + naam;
+      var body = "Naam: " + naam + "%0A";
+      body += "E-mailadres: " + email + "%0A";
+      body += "Bericht: " + bericht;
+  
+      // Maak een mailto link en open het in een nieuw venster
+      var mailtoLink = "mailto:440372@ovc.asgleerling.nl?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      window.location.href = mailtoLink;
+    }
+  </script>
+  </body>
+  </html>
+  <br>
+  <br>
+  <br>
+  <br>

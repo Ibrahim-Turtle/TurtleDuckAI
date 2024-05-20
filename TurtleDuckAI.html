@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurtleDuck AI</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #cfe8d5; /* Light green background */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #008080; /* Teal */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        nav {
+            background-color: #5f9ea0; /* Cadet blue */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #7fffd4; /* Aquamarine */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2e8b57; /* Sea green */
+        }
+
+        p {
+            color: #483d8b; /* Dark slate blue */
+        }
+        #chatMessages {
+    height: 75%;
+    padding-left: 0.75px;
+    padding-top: 0.75px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+    background-image: url('https://mrwallpaper.com/images/high/mint-green-sea-xumgze3bf7rf9dck.webp');  
+    background-repeat: no-repeat; /* Hiermee wordt voorkomen dat de afbeelding wordt herhaald als deze niet groot genoeg is */
+}
+
+        #chatMessages {
+            background-color: #ffffff; /* White */
+            border: 2px solid #008080; /* Teal */
+            padding: 10px;
+            height: 400px;
+            width: 880px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        #userInput {
+            width: calc(64.4% - 22px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 2px solid #008080; /* Teal */
+        }
+
+        #button {
+            background-color: #008080; /* Teal */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #button:hover {
+            background-color: #7fffd4; /* Aquamarine */
+        }
+    </style>
+</head>
+<body>
+<header> 
+    TurtleDuck AI
+</header>
+<nav>
+    <a href="Home.html">Home</a>
+    <a href="Schildpadden.html">Schildpadden</a>
+    <a href="Eenden.html">Eenden</a>
+    <a href="Tools.html">Tools</a>
+    <a href="TurtleDuckAI.html">Turtle & Duck AI</a>
+    <a href="Contact.html">Contact</a>
+    <a href="ImageAI.html">Image AI</a>
+</nav>
+<main>
+    <h1>Welkom bij TurtleDuck AI</h1>
+    <p>
+        Met onze AI-assistent TurtleDuck AI kun je informatie krijgen over schildpadden, eenden en nog veel meer!
+    </p>
+    <p>
+        Stel gerust je vragen en ontdek wat onze AI allemaal weet over deze fascinerende dieren.
+    </p>
+    <h2>Chat met TurtleDuck AI</h2>
+    <div id="chatMessages">
+<img src="" alt="">
+    </div>
+    <input type="text" id="userInput" placeholder="Typ hier je bericht">
+    <button id="button" onclick="sendMessage()">Verstuur</button>
+</main>
+
+<script>
+     function sendMessage() {
+        var userInput = document.getElementById("userInput").value;
+        var chatMessages = document.getElementById("chatMessages");
+        var userMessage = document.createElement("div");
+        userMessage.textContent = "Jij: " + userInput;
+        chatMessages.appendChild(userMessage);
+        document.getElementById("userInput").value = ""; 
+     
+        
+        var aiResponse;
+        switch(userInput.toLowerCase()) {
+            /* Begroetingen van TurtleDuckAI */
+case "hallo":
+case "hi!":
+case "":
+case "hoi":
+case "hi":
+case "goedemorgen":
+case "ewa":
+case "Hallo!":
+case "Hoi!":
+case "Goedemorgen!":
+case "Ewa":
+case "Hey!":
+case "Hey daar!":
+case "Hallo, hoe gaat het?":
+case "Hoi, fijn je te ontmoeten!":
+case "Hey, alles goed?":
+case "Hallo, alles goed?":
+case "Hoi, wat leuk je te zien!":
+case "Goedendag!":
+case "Dag!":
+case "Hey, hoe gaat het vandaag?":
+case "Hallo, hoe is het met jou?":
+case "Hoi, hoe is je dag?":
+case "Hey, wat is er aan de hand?":
+case "Hallo, heb je een goede dag?":
+case "Hoi, wat ben je aan het doen?":
+case "Goedemiddag!":
+case "Hoi, heb je even tijd om te kletsen?":
+case "Hallo, alles goed met je?":
+case "Hey, hoe is het met je familie?":
+case "Hoi, wat doe je vandaag?":
+case "Hallo, hoe gaat het met werk/school?":
+case "Hoi, lang niet gezien!":
+case "Hey, wat leuk je weer te spreken!":
+case "Hallo, hoe gaat het met je vrienden?":
+case "Hoi, ik hoop dat je een geweldige dag hebt!":
+case "Hallo, hoe is het leven?":
+case "Hoi, heb je iets leuks gedaan vandaag?":
+case "Hey, ik mis je!":
+case "Hallo, hoe voel je je vandaag?":
+case "Hoi, ik ben blij dat we elkaar weer spreken!":
+case "Hallo, heb je nog plannen voor vandaag?":
+case "Hoi, ik wilde even hallo zeggen!":
+case "Hey, alles goed aan jouw kant?":
+case "Hallo, ik hoop dat je je goed voelt!":
+case "Hoi, wat is het nieuws?":
+case "Hey, ik dacht aan je en wilde hallo zeggen!":
+case "Hallo, hoe was je weekend?":
+case "Hoi, wat heb je vandaag gedaan?":
+    aiResponse = "Hallo, ik ben TurtleDuckAI, gemaakt om u meer kennis te geven over schildpadden en eenden!"
+    break;
+            /* Overige */
+case "wat is de grootste schildpad soort?":
+    aiResponse = "De Lederschildpad is de grootste schildpad soort die nu nog leeft.";
+    break;
+case "wat is de spanwijdte van een albatros?":
+    aiResponse = "De spanwijdte van een albatros kan variëren, maar sommige soorten hebben een spanwijdte van meer dan 3 meter.";
+    break;
+case "wat is het gewicht van een mannetjes muskuseend?":
+    aiResponse = "Een volwassen mannetjes muskuseend kan tot wel 5 kilogram wegen.";
+    break;
+case "hoe snel kan een eend vliegen?":
+    aiResponse = "De snelheid waarmee eenden kunnen vliegen varieert afhankelijk van de soort, maar gemiddeld kunnen ze vliegen met snelheden tussen 40 en 65 kilometer per uur.";
+    break;
+case "wat is de gemiddelde levensduur van een schildpad?":
+    aiResponse = "Schildpadden hebben een lange levensduur. Sommige soorten kunnen meer dan 100 jaar oud worden, zoals de reuzenschildpad.";
+    break;
+case "wat is de grootste soort eend?":
+    aiResponse = "De Indische loopeend, ook bekend als de Indische lopereend, is een van de grootste soorten eenden en kan tot 5 kilogram wegen.";
+    break;
+case "hoe lang kan een schildpad onder water blijven?":
+    aiResponse = "Schildpadden kunnen afhankelijk van de soort en omgevingsfactoren tot enkele uren onder water blijven.";
+    break;
+case "wat is de snelste eend ter wereld?":
+    aiResponse = "De snelste eend ter wereld is de witkopeend, die snelheden kan bereiken tot 90 kilometer per uur.";
+    break;
+case "wat is de kleinste soort schildpad?":
+    aiResponse = "De kleinste soort schildpad is de stinkpot, ook bekend als de muskusschildpad. Ze worden meestal niet groter dan 13 centimeter.";
+    break;
+case "hoeveel eieren legt een eend per jaar?":
+    aiResponse = "Het aantal eieren dat een eend per jaar legt, varieert afhankelijk van de soort en omgevingsfactoren, maar het kan variëren van enkele tientallen tot meer dan honderd eieren per jaar.";
+    break;
+case "wat is het verschil tussen een schildpad en een tortoise?":
+    aiResponse = "Schildpad is een algemene term die wordt gebruikt om alle soorten reptielen met een schild te beschrijven, terwijl tortoise specifiek verwijst naar landbewonende schildpadden die meestal geen zwemvaardigheden hebben.";
+    break;
+    case "wat is het geluid dat een eend maakt?":
+    aiResponse = "Eenden maken een verscheidenheid aan geluiden, waaronder kwaken, gakken, snateren en fluiten, afhankelijk van de soort en de situatie.";
+    break;
+case "wat is het grootste verschil tussen een eend en een gans?":
+    aiResponse = "Het grootste verschil tussen eenden en ganzen is hun grootte en lichaamsbouw. Ganzen zijn over het algemeen groter en hebben een langere nek dan eenden.";
+    break;
+case "welke soorten eenden zijn trekvogels?":
+    aiResponse = "Veel soorten eenden zijn trekvogels, waaronder de wilde eend, tafeleend, krakeend en pijlstaart.";
+    break;
+case "hoe oud kan een schildpad worden?":
+    aiResponse = "Schildpadden hebben een opmerkelijk lange levensduur en sommige soorten kunnen meer dan 100 jaar oud worden.";
+    break;
+case "wat is de snelste schildpad ter wereld?":
+    aiResponse = "De snelste schildpad ter wereld is de drieteenschildpad, die snelheden tot 35 kilometer per uur kan bereiken.";
+    break;
+case "welke soort schildpadden zijn bedreigd?":
+    aiResponse = "Veel soorten schildpadden worden bedreigd door factoren zoals habitatverlies, vervuiling, stroperij en klimaatverandering. Enkele voorbeelden van bedreigde schildpadden zijn de lederschildpad, de karetschildpad en de angulate schildpad.";
+    break;
+case "wat eten schildpadden?":
+    aiResponse = "Schildpadden zijn omnivoren en hun dieet kan variëren afhankelijk van de soort. Ze eten vaak planten, fruit, groenten, algen, insecten, kleine vis, kreeftachtigen en ander dierlijk materiaal.";
+    break;
+case "hoeveel soorten schildpadden zijn er?":
+    aiResponse = "Er zijn meer dan 300 verschillende soorten schildpadden die voorkomen in verschillende delen van de wereld, variërend van landschildpadden tot zeeschildpadden.";
+    break;
+case "wat is het verschil tussen een schildpad en een landschildpad?":
+    aiResponse = "Het verschil tussen een schildpad en een landschildpad is dat een schildpad een overkoepelend term is die alle soorten reptielen met een schild omvat, terwijl een landschildpad specifiek verwijst naar schildpadden die op het land leven en geen zwemvaardigheden hebben.";
+    break;
+case "hoeveel eieren legt een schildpad per keer?":
+    aiResponse = "Het aantal eieren dat een schildpad per keer legt, varieert afhankelijk van de soort, maar kan variëren van enkele eieren tot meer dan 100 eieren per legsel.";
+    break;
+    case "welke soorten eenden zijn nachtdieren?":
+    aiResponse = "Een aantal soorten eenden zijn nachtdieren, zoals de nachtzwaluw eend en de gele kwikstaart.";
+    break;
+case "wat is het verschil tussen een mannetjeseend en een vrouwtjeseend?":
+    aiResponse = "Mannetjeseenden, ook wel drakes genoemd, hebben vaak helderdere kleuren, een glanzender verenkleed en soms opvallende veren of sieraden op hun kop. Vrouwtjeseenden hebben over het algemeen een meer bescheiden uiterlijk.";
+    break;
+case "hoeveel soorten eenden kunnen duiken?":
+    aiResponse = "De meeste soorten eenden kunnen duiken om voedsel te zoeken, hoewel de duikvaardigheid varieert tussen verschillende soorten.";
+    break;
+case "wat is het leefgebied van de Galápagosreuzenschildpad?":
+    aiResponse = "De Galápagosreuzenschildpad leeft op de Galápagoseilanden, een archipel voor de kust van Ecuador, waar ze een verscheidenheid aan habitats bewonen, waaronder graslanden, bossen en kustgebieden.";
+    break;
+case "wat is het grootste gevaar voor schildpadden in het wild?":
+    aiResponse = "Schildpadden worden bedreigd door verschillende factoren, waaronder habitatverlies, stroperij voor vlees en schilden, verdrinking in visnetten, vervuiling en klimaatverandering.";
+    break;
+case "hoeveel soorten zeeschildpadden zijn er?":
+    aiResponse = "Er zijn zeven soorten zeeschildpadden: de groene zeeschildpad, de onechte karetschildpad, de karetschildpad, de lederschildpad, de dikkopschildpad, de platrugzeeschildpad en de warana.";
+    break;
+case "wat is het grootste verschil tussen landschildpadden en waterschildpadden?":
+    aiResponse = "Het grootste verschil tussen landschildpadden en waterschildpadden is hun habitat en levensstijl. Landschildpadden leven op het land en zijn aangepast aan een terrestrische levensstijl, terwijl waterschildpadden voornamelijk in het water leven en zijn aangepast aan een aquatische levensstijl.";
+    break;
+case "wat is het gewicht van de grootste schildpad ooit gevonden?":
+    aiResponse = "De grootste schildpad ooit gevonden was een lederschildpad die in 1988 aanspoelde op het strand van Wales. Deze schildpad woog meer dan 900 kilogram.";
+    break;
+case "welke soorten eenden zijn te vinden in Nederland?":
+    aiResponse = "In Nederland zijn verschillende soorten eenden te vinden, waaronder de wilde eend, de krakeend, de slobeend, de smient, de kuifeend, de tafeleend en de wintertaling.";
+    break;
+case "wie ben je?":
+    aiResponse = "Ik ben TurtleDuck AI, ontwikkeld door Ibrahim Yahya Eweida en Ryan van der Haak, gemaakt om u meer informatie te geven over schildpadden en eenden, volgens ons de meest edele dieren op deze planeet. Mocht je toch een vraag hebben waar ik geen antwoord op heb, stuur dan een mailtje naar Ibrahim Yahya Eweida via de Contact pagina, zodat wij het kunnen verbeteren!";
+    break;
+            
+            default:
+                aiResponse = "Sorry, ik heb op deze vraag nog geen antwoord, binnenkort zal ik geupgrade worden en zal ik op meer vragen antwoord krijgen .";
+    }
+    var aiMessage = document.createElement("div");
+        aiMessage.textContent = "TurtleDuck AI: " + aiResponse;
+        chatMessages.appendChild(aiMessage);
+        chatMessages.scrollTop = chatMessages.scrollHeight; 
+    
+    }
+        // Event listener for Enter key press
+        document.getElementById("userInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+</script>
+<body>
+    <p>
+        Mijn eerbied waardige collega heeft ook een AI chatbot gemaakt voor de meer algemene zaken.
+    </p> 
+
+    <p>
+        Je kan zijn AI chatbot, genaamt Arya <a href="Arya.html">hier</a> bereiken!
+    </p>
+</body>
+</body>
+</html>
