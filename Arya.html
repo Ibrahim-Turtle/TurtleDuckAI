@@ -182,95 +182,15 @@
   <br>
   <br>
   <br>
-  <h1>Contact</h1>
   <br>
-  <p>Als Arya iets niet heeft begrepen, laat dit dan alsjeblieft weten via het onderstaande formulier. Geef de exacte prompt die je Arya hebt gegeven en wij zullen dit z.s.m. toevoegen aan onze code!</p>
-  <br>
-  <p>Als je het formulier helemaal hebt ingevuld en op 'Verstuur' hebt geklikt, wordt je automatisch naar jouw email-app gestuurd en hier zullen jouw gegevens instaan. <strong>Verander niks aan deze tekst die in de e-mail staat!</strong></p>
   <br>
   <br>
   <html lang="nl">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      .container-form {
-        max-width: 400px;
-        margin: 12.5px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .input-form[type="text"]{
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 50px;
-        box-sizing: border-box;
-      }
-      .input-form[type="submit"], .input-form[type="reset"] {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-      .input-form[type="submit"]:hover, .input-form[type="reset"]:hover {
-        background-color: #0056b3;
-      }
-    </style>
-  </head>
-  <body>
-  
-  <div class="container-form">
-    <form id="contactForm" onsubmit="sendEmail(); return false;">
-      <label for="naam">Vul je naam in:</label>
-      <input id="naam" type="text" required>
-      <br>
-      <br>
-      <label for="email">Vul je e-mailadres in:</label>
-      <input id="email" type="email" required>
-      <br>
-      <br>
-      <label for="bericht">Je bericht:</label>
-      <textarea id="bericht" rows="5" required></textarea>
-      <br>
-      <br>
-      <input class="input-form" type="submit" value="Verstuur">
-      <br>
-      <br>
-      <input class="input-form" type="reset" value="Wissen">
-    </form>
-  </div>
-  
-  <script>
-    function sendEmail() {
-      // Verkrijg de ingevoerde gegevens
-      var naam = document.getElementById("naam").value;
-      var email = document.getElementById("email").value;
-      var bericht = document.getElementById("bericht").value;
-  
-      // Controleer of alle velden zijn ingevuld
-      if (naam.trim() === "" || email.trim() === "" || bericht.trim() === "") {
-        alert("Vul alle velden in voordat je een e-mail verstuurt!.");
-        return;
-      }
-  
-      // Opstelling van het e-mailbericht
-      var subject = "Bericht van " + naam;
-      var body = "Naam: " + naam + "%0A";
-      body += "E-mailadres: " + email + "%0A";
-      body += "Bericht: " + bericht;
-  
-      // Maak een mailto link en open het in een nieuw venster
-      var mailtoLink = "mailto:440372@ovc.asgleerling.nl?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      window.location.href = mailtoLink;
-    }
+
+    
   </script>
   </body>
   </html>
